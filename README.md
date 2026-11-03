@@ -7,6 +7,7 @@ Sunday Kiln is a small pottery studio in Accra. Brand Genome lets one maker run 
 Potters record a glaze recipe by firing test tiles. So each storefront shows its own genome as a board of glaze test tiles, and every product is drawn as a pot dipped in one of those glazes. The system that normally hides in the code is the first thing a shopper sees.
 
 - **Live preview:** https://mukeshkbj.github.io/brand-genome/ (static copy of the three themes; checkout runs on Krifth)
+- **Demo video (2 min):** https://mukeshkbj.github.io/brand-genome/demo.mp4
 - **Judges' overview:** https://claude.ai/artifact/78FMKip8otLY5s6RrrP5Pm
 
 ![Sunday Kiln home page with the glaze test-tile board](docs/screenshots/19-kiln-hero.jpg)

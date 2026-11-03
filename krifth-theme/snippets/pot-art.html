@@ -1,0 +1,2 @@
+{# Shown when a product has no photo (replaces the old SVG illustration) #}
+{% if product.image %}<img src="{{ product.image|first_image|asset_url }}" alt="{{ product.item }}" loading="lazy" decoding="async">{% else %}<span class="pot-art {{ vcls }}" role="img" aria-label="{{ product.item }} (drawing until a photo is added)"></span>{% endif %}

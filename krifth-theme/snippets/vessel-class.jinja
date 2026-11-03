@@ -1,0 +1,3 @@
+{# Picks the pot shape from the product name; put it just before each product card #}
+{% set nm = product.item|lower %}{% set vcls = 'v-mug' if 'mug' in nm else ('v-bowl' if 'bowl' in nm else ('v-vase' if 'vase' in nm else ('v-plate' if 'plate' in nm else ('v-jar' if ('candle' in nm or 'jar' in nm) else '')))) %}
+<div class="card {{ vcls }}">

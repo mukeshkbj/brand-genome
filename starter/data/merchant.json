@@ -1,0 +1,19 @@
+{
+  "id": "merchant-001",
+  "name": "Demo Merchant",
+  "baseCurrency": "GHS",
+  "displayCurrencies": ["GHS", "GBP"],
+  "currencies": {
+    "GHS": { "rate": 1, "label": "Ghana cedi" },
+    "GBP": { "rate": 0.062, "label": "Pound sterling" },
+    "KES": { "rate": 10.4, "label": "Kenyan shilling" },
+    "EUR": { "rate": 0.073, "label": "Euro" }
+  },
+  "ratesNote": "Placeholder rates (units per 1 GHS). Update before the demo.",
+  "brands": ["sunday-kiln", "night-market"],
+  "paymentMethods": [
+    { "id": "mtn-momo", "label": "MTN MoMo", "currency": "GHS", "sandboxCurrency": "EUR" },
+    { "id": "telecel-cash", "label": "Telecel Cash", "currency": "GHS" },
+    { "id": "mpesa", "label": "M-Pesa", "currency": "KES" }
+  ]
+}

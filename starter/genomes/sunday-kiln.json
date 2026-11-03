@@ -1,0 +1,12 @@
+{
+  "id": "sunday-kiln",
+  "name": "Sunday Kiln",
+  "tagline": "Slow pottery for everyday tables",
+  "story": "Every piece starts on a Sunday morning at the wheel. We make small batches, glaze by hand, and fire until the colours surprise us.",
+  "voice": { "tone": "warm, unhurried, a little playful", "greeting": "Pull up a chair - the kiln's still warm." },
+  "colors": { "bg": "#FBF6EF", "surface": "#FFFFFF", "text": "#2B211A", "muted": "#6B5A4C", "primary": "#B4532A", "onPrimary": "#FFFFFF", "accent": "#2F5D62" },
+  "type": { "heading": "Georgia, 'Times New Roman', serif", "body": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", "baseSize": 17, "scale": 1.25 },
+  "layout": { "radius": 14, "density": "airy", "productColumns": 3, "imageRatio": "4/5" },
+  "hero": { "headline": "Made slowly. Used every day.", "sub": "Small-batch stoneware from our studio.", "image": "/assets/hero-sunday-kiln.svg", "video": "" },
+  "featured": ["mug-indigo", "bowl-sand", "vase-ember"]
+}

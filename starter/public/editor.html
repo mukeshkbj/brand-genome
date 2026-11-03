@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Theme editor · Brand Genome</title>
+<style>
+:root{--bg:#F6F5F2;--panel:#FFFFFF;--text:#1C1B19;--muted:#5D5A54;--line:#DDD9D2;--accent:#1F5F8B;--ok:#1E6B3A;--bad:#A3271A}
+@media(prefers-color-scheme:dark){:root{--bg:#141413;--panel:#1E1D1B;--text:#F1EFEA;--muted:#B5B0A7;--line:#3A3833;--accent:#7FB8E0;--ok:#6CC08B;--bad:#F08A7E}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;border-bottom:1px solid var(--line);flex-wrap:wrap}
+header h1{font-size:1.1rem;margin:0}
+a{color:var(--accent)}
+.layout{display:grid;gap:1rem;padding:1rem}
+@media(min-width:70rem){.layout{grid-template-columns:24rem 1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem}
+label{font-weight:600;display:block;margin-bottom:.3rem}
+textarea{width:100%;min-height:6rem;font:inherit;color:var(--text);background:var(--bg);border:2px solid var(--line);border-radius:8px;padding:.6rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button{font:inherit;font-weight:600;min-height:44px;padding:.5rem 1rem;border-radius:8px;border:2px solid var(--accent);background:var(--accent);color:var(--panel);cursor:pointer}
+button.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+button:disabled{opacity:.5;cursor:progress}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.6rem 0 1rem}
+.chips button{min-height:36px;padding:.3rem .7rem;font-weight:500;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:99px}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:.35rem .3rem;border-bottom:1px solid var(--line);vertical-align:top;word-break:break-word}
+.swatch{display:inline-block;width:.9em;height:.9em;border-radius:3px;border:1px solid var(--line);vertical-align:-.1em;margin-right:.3em}
+.pass{color:var(--ok)}.fail{color:var(--bad);font-weight:700}
+.previews{display:grid;gap:1rem}
+@media(min-width:90rem){.previews.two{grid-template-columns:1fr 1fr}}
+.frame h2{font-size:.95rem;margin:0 0 .4rem;color:var(--muted)}
+iframe{width:100%;height:72vh;border:1px solid var(--line);border-radius:12px;background:#fff}
+.muted{color:var(--muted)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header>
+  <h1>Theme editor · <span id="brand-name">…</span></h1>
+  <nav><a href="/">All storefronts</a> · <a id="open-store" href="#">Open store</a></nav>
+</header>
+<div class="layout">
+  <section class="panel" aria-labelledby="ask-h">
+    <h2 id="ask-h" style="font-size:1rem;margin-top:0">Describe the change</h2>
+    <form id="ask">
+      <label for="prompt">What would you like to change?</label>
+      <textarea id="prompt" name="prompt" aria-describedby="prompt-hint" placeholder="Make it feel like Bonfire Night"></textarea>
+      <p id="prompt-hint" class="muted" style="margin:.3rem 0 0;font-size:.9rem">Say it the way you would to a designer. Nothing changes until you approve it.</p>
+      <div class="chips" aria-label="Examples">
+        <button type="button" data-ex="Make it feel like Bonfire Night - warm, glowing, cosy">Bonfire Night</button>
+        <button type="button" data-ex="Bigger product photos and softer corners">Bigger photos</button>
+        <button type="button" data-ex="Lighter, fresher and more modern">Lighter and modern</button>
+        <button type="button" data-ex="Rewrite the hero headline to sound more playful">Playful headline</button>
+      </div>
+      <button type="submit" id="go">Propose changes</button>
+    </form>
+
+    <div id="status" role="status" aria-live="polite" class="muted" style="margin-top:1rem"></div>
+
+    <div id="result" hidden>
+      <h3 style="font-size:1rem">Proposed changes</h3>
+      <p id="summary"></p>
+      <table><caption class="muted" style="text-align:left;caption-side:top;font-size:.85rem">From → to</caption>
+        <thead><tr><th scope="col">Setting</th><th scope="col">Now</th><th scope="col">Proposed</th></tr></thead>
+        <tbody id="changes"></tbody></table>
+      <h3 style="font-size:1rem;margin-top:1rem">Readability check</h3>
+      <ul id="a11y" style="padding-left:1.1rem;font-size:.9rem"></ul>
+      <div class="row">
+        <button type="button" id="approve">Approve and publish</button>
+        <button type="button" id="reject" class="ghost">Reject</button>
+      </div>
+    </div>
+    <div class="row"><button type="button" id="undo" class="ghost">Undo last published change</button></div>
+  </section>
+
+  <section aria-label="Preview" class="previews" id="previews">
+    <div class="frame"><h2 id="cur-label">Current store</h2><iframe id="current" title="Current storefront"></iframe></div>
+    <div class="frame" hidden id="prop-wrap"><h2>Proposed</h2><iframe id="proposed" title="Proposed storefront"></iframe></div>
+  </section>
+</div>
+<script src="/assets/editor.js" defer></script>
+</body>
+</html>

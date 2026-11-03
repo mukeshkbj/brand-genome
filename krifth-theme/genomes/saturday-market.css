@@ -1,0 +1,4 @@
+:root {
+      /* BRAND GENOME v2: Saturday Market. Every page reads these tokens; the glaze tiles on the home page draw them. */
+      --brand:#0B6E4F;--brand-dark:#08553D;--on-brand:#fff;--accent:#F4B400;--on-accent:#13291F;--accent-soft:#E3EEDF;--text:#13291F;--muted:#47594E;--border:#D2DECF;--bg:#F1F6EE;--surface:#FFFFFF;--board:#FFFFFF;--focus:#0B6E4F;--ok:#0B6E4F;--err:#C23324;--font-head:'Bricolage Grotesque',Trebuchet MS,sans-serif;--font-body:'Hanken Grotesk',system-ui,sans-serif;--head-weight:800;--head-track:-.025em;--radius:22px;--btn-radius:999px;--glaze-1:#0B6E4F;--glaze-2:#F4B400;--glaze-3:#E0412F;--glaze-4:#2B7BB9;--glaze-5:#D9467A;--clay:#E3C9A6;--shadow:rgba(19,41,31,.12);--star:#7A5800;
+    }

@@ -1,0 +1,12 @@
+{
+  "id": "night-market",
+  "name": "Night Market",
+  "tagline": "Bold pieces for late tables",
+  "story": "Same studio, after dark. Night Market is where the loud glazes live - pieces made for dinners that run long.",
+  "voice": { "tone": "confident, punchy, short sentences", "greeting": "Doors open. Lights low. Pick something loud." },
+  "colors": { "bg": "#14121A", "surface": "#1F1C28", "text": "#F4F1EA", "muted": "#B9B2C6", "primary": "#F2C14E", "onPrimary": "#14121A", "accent": "#E4572E" },
+  "type": { "heading": "'Arial Black', 'Helvetica Neue', Arial, sans-serif", "body": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", "baseSize": 16, "scale": 1.333 },
+  "layout": { "radius": 4, "density": "cozy", "productColumns": 2, "imageRatio": "1/1" },
+  "hero": { "headline": "After dark, the glazes get louder.", "sub": "Statement ceramics, small runs.", "image": "/assets/hero-night-market.svg", "video": "" },
+  "featured": ["vase-ember", "candle-clay", "plate-moss"]
+}

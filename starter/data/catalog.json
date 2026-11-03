@@ -1,0 +1,10 @@
+{
+  "note": "Shared catalogue for every storefront under this merchant. Prices are in minor units of the merchant base currency (pesewas). Replace with the real seller's products.",
+  "products": [
+    { "id": "mug-indigo", "name": "Indigo glaze mug", "price": 12000, "image": "/assets/products/mug-indigo.svg", "summary": "Hand-thrown stoneware, 350 ml.", "story": "Thrown on a kick wheel and dipped twice for that deep pool of blue.", "stock": 14 },
+    { "id": "bowl-sand", "name": "Sand speckle bowl", "price": 15500, "image": "/assets/products/bowl-sand.svg", "summary": "Everyday bowl, 16 cm.", "story": "Local clay with natural iron speckles, no two alike.", "stock": 9 },
+    { "id": "vase-ember", "name": "Ember bud vase", "price": 9800, "image": "/assets/products/vase-ember.svg", "summary": "Small vase for one stem.", "story": "Fired hot so the glaze breaks orange at the edges.", "stock": 21 },
+    { "id": "plate-moss", "name": "Moss side plate", "price": 11000, "image": "/assets/products/plate-moss.svg", "summary": "Side plate, 20 cm.", "story": "A soft green that looks different every hour of the day.", "stock": 6 },
+    { "id": "candle-clay", "name": "Clay pot candle", "price": 8500, "image": "/assets/products/candle-clay.svg", "summary": "Soy candle in a reusable pot.", "story": "When the candle is done, the pot becomes a planter.", "stock": 30 }
+  ]
+}

@@ -1,0 +1,76 @@
+/* ===== Glaze layer v2: the genome drawn as glaze test tiles ===== */
+body{font-family:var(--font-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;background:var(--bg)}
+h1,h2,h3,.section-title{font-family:var(--font-head);font-weight:var(--head-weight,400);letter-spacing:var(--head-track,-.01em);line-height:1.05}
+.brand strong{font-family:var(--font-head);font-weight:var(--head-weight,400);font-size:1.5rem;letter-spacing:var(--head-track,-.01em)}
+.announcement{font-size:.95rem;letter-spacing:.01em}
+.kr-mood{display:block;font-size:.88rem;opacity:.9}
+.kr-mood:empty{display:none}
+
+/* Hero: headline left, glaze test board right */
+.glaze-hero{display:grid;gap:clamp(28px,5vw,64px);align-items:center;max-width:1200px;margin:0 auto;padding:clamp(36px,5vw,72px) clamp(20px,4vw,48px) clamp(36px,5vw,64px)}
+@media(min-width:900px){.glaze-hero{grid-template-columns:1.05fr 1fr}}
+.glaze-hero h1{font-size:clamp(2.6rem,5.4vw,4.6rem);margin:0 0 22px;max-width:15ch;color:var(--text);text-wrap:balance}
+.glaze-hero .lead{font-size:clamp(1.1rem,1.6vw,1.3rem);color:var(--muted);max-width:38ch;margin:0 0 30px}
+.glaze-hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-fire{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;border-radius:var(--btn-radius,999px);background:var(--brand);color:var(--on-brand);font-weight:700;text-decoration:none;font-size:1.05rem;box-shadow:0 2px 0 var(--brand-dark)}
+.btn-fire:hover{background:var(--brand-dark)}
+.btn-quiet{color:var(--text);font-weight:600;text-underline-offset:.3em}
+
+.board{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.6vw,18px);padding:clamp(18px,2.4vw,28px);border-radius:calc(var(--radius) + 8px);background:var(--board,var(--surface));box-shadow:inset 0 0 0 1px var(--border)}
+.board figcaption{grid-column:1/-1;font-size:.92rem;color:var(--muted);margin-top:4px}
+.tile{position:relative;aspect-ratio:3/4;border-radius:10px 10px 14px 12px;background:var(--clay);overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.08),0 8px 18px -10px rgba(0,0,0,.35);transform:rotate(var(--r,0deg))}
+.tile:nth-child(1){--r:-1.6deg}.tile:nth-child(2){--r:.8deg}.tile:nth-child(3){--r:-.4deg}.tile:nth-child(4){--r:1.2deg}.tile:nth-child(5){--r:-1deg}.tile:nth-child(6){--r:1.8deg}
+.tile::before{content:"";position:absolute;inset:0 0 auto 0;height:min(var(--dip,52%),40%);background:radial-gradient(90% 55% at 30% 18%,rgba(255,255,255,.28),transparent 60%),var(--g);-webkit-mask:var(--drip) bottom/100% 100% no-repeat;mask:var(--drip) bottom/100% 100% no-repeat}
+.tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(0,0,0,.06) 0 1px,transparent 1.5px) 0 0/7px 7px;pointer-events:none}
+.tile span{position:absolute;left:10px;right:8px;bottom:9px;font-size:.8rem;line-height:1.25;color:#3b2d22;z-index:1}
+.tile b{display:block;font-weight:700;font-size:.86rem}
+:root{--drip:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V78C96 78 95 92 91 92S86 80 82 80 77 86 72 86 66 74 61 74 57 96 52 96 48 82 43 82 37 88 32 88 27 76 22 76 18 90 13 90 8 79 4 79 1 84 0 84Z'/%3E%3C/svg%3E")}
+
+/* Section heading */
+.section-title{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:1200px;margin:24px auto 8px;padding:0 clamp(20px,4vw,48px)}
+.section-note{max-width:1200px;margin:0 auto 28px;padding:0 clamp(20px,4vw,48px);color:var(--muted)}
+
+/* Product grid: each card fired in one genome glaze */
+.grid{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px) 64px;gap:clamp(16px,2.4vw,28px)}
+.card{border:0;border-radius:var(--radius);background:var(--surface);box-shadow:0 0 0 1px var(--border);overflow:hidden;display:flex;flex-direction:column}
+.card:nth-child(5n+1){--g:var(--glaze-1)}.card:nth-child(5n+2){--g:var(--glaze-2)}.card:nth-child(5n+3){--g:var(--glaze-3)}.card:nth-child(5n+4){--g:var(--glaze-4)}.card:nth-child(5n+5){--g:var(--glaze-5)}
+.card .thumb{position:relative;aspect-ratio:4/5;background:var(--clay);overflow:hidden}
+.card .thumb img{position:relative;width:100%;height:100%;object-fit:cover;color:transparent}
+.card .body{padding:16px 18px 6px;flex:1}
+.card .name{font-family:var(--font-head);font-weight:var(--head-weight,400);font-size:1.2rem;line-height:1.2;margin-bottom:6px}
+.card .price{font-weight:700;font-size:1.05rem}
+.card .add-to-cart-btn{margin:10px 18px 18px;width:calc(100% - 36px);min-height:46px;border-radius:var(--btn-radius,999px);background:transparent;color:var(--text);box-shadow:inset 0 0 0 2px var(--text);font-weight:700}
+.card .add-to-cart-btn:hover:not([disabled]){background:var(--text);color:var(--bg)}
+.card .add-to-cart-btn[disabled]{box-shadow:inset 0 0 0 2px var(--border);color:var(--muted)}
+.badge-sold-out{z-index:2}
+
+@media(prefers-reduced-motion:no-preference){.tile{transition:transform .25s}.board:hover .tile{transform:rotate(0)}}
+@media(max-width:560px){.board{grid-template-columns:repeat(3,1fr);gap:8px;padding:12px}.tile span{font-size:.7rem;left:6px;bottom:6px}.tile b{font-size:.74rem}.card .name{font-size:1rem}}
+:root{--v-mug:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M22 30H66V76Q66 86 56 86H32Q22 86 22 76ZM66 40C84 40 86 70 66 72V63C76 62 76 49 66 49Z'/%3E%3C/svg%3E");--v-bowl:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M12 46H88C88 68 72 80 50 80C28 80 12 68 12 46ZM40 79H60V85H40Z'/%3E%3C/svg%3E");--v-vase:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M44 14H56V28C56 35 73 44 73 62C73 78 63 86 50 86C37 86 27 78 27 62C27 44 44 35 44 28Z'/%3E%3C/svg%3E");--v-plate:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M6 58C6 46 94 46 94 58C94 68 74 74 50 74C26 74 6 68 6 58Z'/%3E%3C/svg%3E");--v-jar:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M30 32C30 27 70 27 70 32V80C70 86 30 86 30 80Z'/%3E%3C/svg%3E");}
+
+/* Vessel art: each product drawn as a pot dipped in one genome glaze */
+.card:nth-child(5n+1){--v:var(--v-mug)}.card:nth-child(5n+2){--v:var(--v-bowl)}.card:nth-child(5n+3){--v:var(--v-vase)}.card:nth-child(5n+4){--v:var(--v-plate)}.card:nth-child(5n+5){--v:var(--v-jar)}
+.v-mug,.card.v-mug{--v:var(--v-mug)}.v-bowl,.card.v-bowl{--v:var(--v-bowl)}.v-vase,.card.v-vase{--v:var(--v-vase)}.v-plate,.card.v-plate{--v:var(--v-plate)}.v-jar,.card.v-jar{--v:var(--v-jar)}
+body.kr-rainy .grid .card.v-mug,body.kr-rainy .grid .card.v-bowl,body.kr-sunny .grid .card.v-vase,body.kr-sunny .grid .card.v-plate{order:-1}
+.card .thumb img::before,.pot-art::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 34% 4.5% at 50% 86%,rgba(0,0,0,.22),transparent 70%),radial-gradient(circle at 20% 80%,rgba(0,0,0,.05) 0 1px,transparent 1.5px) 0 0/7px 7px,color-mix(in srgb,var(--g) 13%,var(--surface))}
+.card .thumb img::after,.pot-art::after{content:"";position:absolute;inset:2% 4% 0;height:auto;background:radial-gradient(28% 22% at 36% 34%,rgba(255,255,255,.42),transparent 70%),linear-gradient(174deg,var(--g) 0 var(--dipline,58%),color-mix(in srgb,var(--clay) 82%,#000) calc(var(--dipline,58%) + .5%));-webkit-mask:var(--v) center/contain no-repeat;mask:var(--v) center/contain no-repeat}
+.pot-art{position:relative;display:block;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:inherit;--g:var(--glaze-1)}
+.card .pot-art{height:100%;aspect-ratio:auto;--g:inherit}
+.card{--g:var(--glaze-1);--v:var(--v-vase)}
+.card:nth-child(3n+2){--dipline:66%}.card:nth-child(3n){--dipline:50%}
+/* Product page */
+.pdp{display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,64px);align-items:flex-start;max-width:1200px;margin:0 auto;padding:clamp(24px,4vw,56px) clamp(20px,4vw,48px)}
+.pdp-gallery{flex:1 1 340px;max-width:560px;width:100%}
+.pdp-main-wrap{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 0 0 1px var(--border);background:var(--surface)}
+.pdp-main-wrap img{display:block;width:100%;height:auto}
+.pdp-main-wrap .pot-art{--g:var(--glaze-1)}
+.pdp h1{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:0 0 10px}
+.pdp .price{font-size:1.35rem;font-weight:700}
+.pdp .add-to-cart-btn{min-height:50px;padding:0 28px;border-radius:var(--btn-radius,999px);font-weight:700}
+/* polish 1 */
+@media(min-width:1000px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.tile span{background:linear-gradient(to top,var(--clay) 70%,transparent);padding-top:6px}
+/* polish 2 */
+.board{margin:0;width:100%;box-sizing:border-box}
+@media(max-width:560px){.glaze-hero{padding-top:28px}.glaze-hero h1{font-size:2.7rem}.board{gap:10px}.tile span{left:7px;right:5px;bottom:7px}}
+/* ===== end glaze layer ===== */

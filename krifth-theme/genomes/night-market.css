@@ -1,0 +1,4 @@
+:root {
+      /* BRAND GENOME v2: Night Market. Every page reads these tokens; the glaze tiles on the home page draw them. */
+      --brand:#FFB24C;--brand-dark:#E8962A;--on-brand:#221C3F;--accent:#FF7A93;--on-accent:#221C3F;--accent-soft:#3A3266;--text:#F7EDE1;--muted:#CBC0DA;--border:#4A4177;--bg:#221C3F;--surface:#2D2652;--board:#2D2652;--focus:#FFB24C;--ok:#7BD3A0;--err:#FF8A7A;--font-head:'Big Shoulders Display',Impact,sans-serif;--font-body:'Hanken Grotesk',system-ui,sans-serif;--head-weight:800;--head-track:.005em;--radius:6px;--btn-radius:6px;--glaze-1:#FFB24C;--glaze-2:#E8506E;--glaze-3:#6B5FD0;--glaze-4:#3E8E6A;--glaze-5:#C2361F;--clay:#D8B892;--shadow:rgba(0,0,0,.45);--star:#FFB24C;
+    }

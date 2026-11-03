@@ -1,0 +1,4 @@
+:root {
+      /* BRAND GENOME v2: Sunday Kiln. Every page reads these tokens; the glaze tiles on the home page draw them. */
+      --brand:#1F4E5F;--brand-dark:#163A47;--on-brand:#fff;--accent:#1D2722;--on-accent:#E4E7DD;--accent-soft:#D5DCCF;--text:#1D2722;--muted:#4C5952;--border:#C9D0C3;--bg:#E4E7DD;--surface:#F4F5EF;--board:#F4F5EF;--focus:#1F4E5F;--ok:#2F6B3F;--err:#A4471F;--font-head:'Young Serif',Georgia,serif;--font-body:'Hanken Grotesk',system-ui,sans-serif;--head-weight:400;--head-track:-.01em;--radius:16px;--btn-radius:999px;--glaze-1:#1F4E5F;--glaze-2:#8FAE9B;--glaze-3:#5A2716;--glaze-4:#7D8B74;--glaze-5:#A4471F;--clay:#D9C6AA;--shadow:rgba(29,39,34,.14);--star:#7A4E00;
+    }

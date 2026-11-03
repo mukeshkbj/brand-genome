@@ -1,0 +1,13 @@
+{
+  "name": "brand-genome",
+  "version": "0.1.0",
+  "description": "Krifth Hackathon entry: one brand genome rendered as storefront, with mobile money checkout and a natural-language theme editor.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20.12" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test --test-concurrency=1 test/*.test.js"
+  }
+}

@@ -1,0 +1,37 @@
+<!-- Add inside the announcement bar in sections/header.html: -->
+<span class="kr-mood" id="kr-mood" data-shop="{{ shop.id }}" aria-live="polite"></span>
+
+<!-- And at the end of sections/header.html: -->
+<script>
+(function () {
+  /* Living genome: the storefront reads today's Accra weather and re-merchandises itself.
+     Rain likely -> mugs and bowls move to the front and the banner says why. No data leaves the shopper. */
+  var el = document.getElementById('kr-mood');
+  if (!el || !window.fetch) return;
+  var KEY = 'krifth_mood_' + (el.getAttribute('data-shop') || '0'), cached = null;
+  try { cached = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) {}
+  function apply(d) {
+    if (!d) return;
+    var rain = d.rain >= 60, hot = d.tmax >= 32;
+    if (rain) {
+      document.body.classList.add('kr-rainy');
+      el.textContent = 'Rain is due in Accra today (' + d.rain + '%), so mugs and bowls are up front.';
+    } else if (hot) {
+      el.textContent = 'A hot one in Accra today (' + Math.round(d.tmax) + '°C). Vases and plates for cool evenings are up front.';
+      document.body.classList.add('kr-sunny');
+    } else {
+      el.textContent = 'Clear skies in Accra today. Delivery runs as normal.';
+    }
+  }
+  if (cached) return apply(cached);
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=5.6037&longitude=-0.1870&daily=temperature_2m_max,precipitation_probability_max&timezone=Africa%2FAccra&forecast_days=1')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) {
+      if (!j || !j.daily) return;
+      var d = { rain: j.daily.precipitation_probability_max[0] || 0, tmax: j.daily.temperature_2m_max[0] || 0 };
+      try { sessionStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {}
+      apply(d);
+    })
+    .catch(function () {});
+})();
+</script>
